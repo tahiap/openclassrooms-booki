@@ -7,6 +7,6 @@ Il a pour but de former aux bases du développement et à l'utilisation de HTML 
 # Guide de déploiement
 
 Cloner le repository :
-$ git clone https://github.com/tahiap/openclassrooms-p2-booki.git
+$ git clone https://github.com/tahiap/openclassrooms-booki.git
 
 Ouvrir avec Live Server.
