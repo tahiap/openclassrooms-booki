@@ -1,0 +1,808 @@
+/* VARIABLES */
+
+:root {
+  --color-primary: #0065fc;
+  --color-secondary: #deebff;
+  --color-bg: #f2f2f2;
+  --color-light-font: #333;
+  --color-border: #eee;
+  --max-width: 1400px;
+  --min-width: 200px;
+}
+
+/* GENERAL */
+
+html {
+  min-width: var(--min-width);
+}
+
+body,
+button,
+form {
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+p,
+li {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-light-font);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+article {
+  border-radius: 25px;
+  transition-duration: 500ms;
+  display: block;
+}
+
+article:hover {
+  transform: scale(1.1);
+  transition-duration: 500ms;
+}
+
+.article p {
+  font-weight: 300;
+  color: var(--color-light-font);
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 35px;
+}
+
+header img {
+  width: 100px;
+  margin-top: 40px;
+}
+
+header ul {
+  display: flex;
+}
+
+header a {
+  padding: 50px 25px;
+  border-top: 2px solid transparent;
+  display: block;
+}
+
+header a:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* MAIN */
+
+main {
+  max-width: var(--max-width);
+  margin: 20px auto;
+  padding: 0 35px;
+}
+
+/* search */
+
+.search p {
+  margin-bottom: 15px;
+}
+
+.search-bar {
+  margin: 20px 0 90px 0;
+  position: relative;
+}
+
+.search-bar i {
+  background: var(--color-bg);
+  padding: 16px 20px;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+}
+
+.search-bar input {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-light-font);
+  border: var(--color-border) solid 1px;
+  padding: 0 15px;
+  width: 190px;
+  height: 45px;
+  position: absolute;
+  left: 50px;
+}
+
+.search-bar input::placeholder {
+  color: var(--color-light-font);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.btn-search-text {
+  color: white;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 0 10px 10px 0;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 15px;
+  position: absolute;
+  left: 272px;
+}
+
+.btn-search-text:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn-search-icon {
+  display: none;
+}
+
+/* filter */
+
+.filter {
+  display: flex;
+}
+
+.filter h2 {
+  margin-right: 30px;
+  align-self: center;
+}
+
+.filter-search {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.filter-search button {
+  background: white;
+  border: var(--color-border) solid 2px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 13px;
+  padding-right: 15px;
+  margin: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.filter button:hover {
+  border: 2px solid var(--color-secondary);
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.filter-search i {
+  color: var(--color-primary);
+  background: var(--color-secondary);
+  border-radius: 100%;
+  padding: 15px;
+  margin: -2px 10px -2px -10px;
+  width: 15px;
+}
+
+.filter button:hover i {
+  color: var(--color-primary);
+}
+
+.filter-info {
+  margin: 15px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+}
+
+.filter-info i {
+  color: var(--color-primary);
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: var(--color-border) solid 2px;
+  border-radius: 100%;
+}
+
+/* hotel */
+
+.hotel {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.hotel h2 {
+  margin: 25px 0 15px 25px;
+}
+
+.card-rate {
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+/* hotel marseille */
+
+.hotel-marseille {
+  background: var(--color-bg);
+  border-radius: 30px;
+  margin-right: 40px;
+  padding: 15px;
+  flex: 5;
+}
+
+.hotel-all-card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.hotel-card {
+  background: white;
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  margin: 15px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hotel-card-img {
+  height: 60%;
+}
+
+.hotel-card-img img {
+  border-radius: 20px 20px 0 0;
+  height: 100%;
+  width: 100%;
+  min-width: 80%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.hotel-card-text {
+  margin: 7px 15px;
+  height: 40%;
+  line-height: 5px;
+}
+
+.hotel-marseille > p {
+  margin: 30px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* popular hotel */
+
+.hotel-pop {
+  background: var(--color-bg);
+  border-radius: 30px;
+  padding: 20px;
+  flex: 2;
+  min-width: 300px;
+  max-height: 620px;
+}
+
+.title-pop {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title-pop i {
+  margin-right: 8%;
+}
+
+.hotel-all-pop-card {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.hotel-pop-card {
+  background: white;
+  padding: 5px;
+  margin: 15px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  align-self: center;
+  width: 85%;
+  max-height: 145px;
+}
+
+.hotel-pop-card a {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.hotel-pop-card-img {
+  flex: 1;
+  height: 145px;
+}
+
+.hotel-pop-card-img img {
+  border-radius: 20px 0 0 20px;
+  height: 100%;
+  width: 100%;
+  min-width: 110px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.hotel-pop-card-text {
+  margin: 0 10px 0 15px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  flex: 2;
+}
+
+/* activities */
+
+.activities {
+  margin: 60px 0;
+}
+
+.activities h2 {
+  margin: 0 0 30px 20px;
+}
+
+.activities-all-card {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.activities-l-card {
+  height: 400px;
+  width: 20%;
+  max-width: 300px;
+  min-width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 5px;
+}
+
+.activities-l-card-img {
+  height: 88%;
+}
+
+.activities-l-card-img img {
+  border-radius: 20px 20px 0 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.activities-xs-s-group-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  max-width: 300px;
+  min-width: 220px;
+  margin: 0 10px;
+}
+
+.activities-s-card {
+  height: 200px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.activities-s-card-img {
+  height: 77%;
+}
+
+.activities-s-card-img img {
+  border-radius: 20px 20px 0 0;
+  height: 100%;
+  width: 100%;
+  object-position: left;
+  object-fit: cover;
+  display: block;
+}
+
+.activities-xs-card {
+  height: 160px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.activities-xs-card-img {
+  height: 71%;
+}
+
+.activities-xs-card-img img {
+  border-radius: 20px 20px 0 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.activities h3 {
+  margin: 15px 10px 15px 15px;
+}
+
+.object-position-unset img {
+  object-position: unset;
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background: var(--color-bg);
+}
+
+.footer-elem {
+  flex: 1;
+  margin: 25px 0 30px 15px;
+}
+
+.footer-elem h3 {
+  margin: 20px 0 20px 35px;
+}
+
+.footer-elem li {
+  margin: 0 0 12px 35px;
+}
+
+/****** TABLET ******/
+
+@media only screen and (max-width: 991px) {
+  /* hotel */
+
+  .hotel {
+    flex-direction: column-reverse;
+  }
+
+  .hotel h2 {
+    margin: 25px 50px 15px 30px;
+  }
+
+  /* popular hotel */
+
+  .hotel-pop {
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  .hotel-pop h2 {
+    margin-right: 0;
+  }
+
+  .hotel-all-pop-card {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .hotel-pop-card {
+    width: 270px;
+  }
+
+  .hotel-pop-card-img img {
+    border-radius: 20px 0 0 20px;
+    height: 145px;
+    width: 110px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* hotel marseille */
+
+  .hotel-marseille {
+    margin-right: 0;
+    height: 220px;
+  }
+
+  .hotel-card {
+    width: 250px;
+  }
+  /* activities */
+
+  .activities h2 {
+    margin: 0 0 30px 30px;
+  }
+
+  .activities-all-card {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .activities-l-card {
+    height: 250px;
+    width: 210px;
+    max-width: unset;
+    min-width: unset;
+  }
+
+  .activities-l-card-img {
+    height: 75%;
+  }
+
+  .activities-xs-s-group-card {
+    flex-flow: row nowrap;
+    width: 460px;
+    max-width: unset;
+    min-width: unset;
+    margin: 0;
+  }
+
+  .activities-s-card,
+  .activities-xs-card {
+    height: 250px;
+    width: 210px;
+  }
+
+  .activities-s-card-img,
+  .activities-xs-card-img {
+    height: 75%;
+  }
+
+  .activities article {
+    margin: 15px;
+  }
+}
+
+/****** MOBILE ******/
+
+@media only screen and (max-width: 767px) {
+  /* HEADER */
+
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    padding: 0;
+  }
+
+  header img {
+    margin: 0 0 30px 30px;
+    display: block;
+  }
+
+  header nav,
+  header li,
+  header a {
+    width: 100%;
+  }
+
+  header a {
+    padding: 0 0 10px 0;
+    border-top: none;
+    border-bottom: 2px solid var(--color-border);
+    text-align: center;
+  }
+
+  header a:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* MAIN */
+
+  main {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* SEARCH */
+
+  .search {
+    margin: 10px 20px;
+  }
+
+  .search-bar {
+    margin: 20px 0 60px 0;
+  }
+
+  .search-bar input {
+    width: 200px;
+    outline: 0;
+  }
+
+  .btn-search-text {
+    display: none;
+  }
+
+  .btn-search-icon {
+    display: inline-block;
+  }
+
+  .btn-search-icon i {
+    color: white;
+    background: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    padding: 15px;
+    position: absolute;
+    left: 270px;
+    bottom: -28px;
+  }
+
+  .btn-search-icon:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .search p {
+    margin-right: 5px;
+  }
+
+  /* FILTER */
+
+  .filter {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .filter h2 {
+    align-self: flex-start;
+  }
+
+  /* hotel */
+
+  .hotel {
+    flex-direction: column-reverse;
+  }
+
+  .hotel h2 {
+    margin: 25px 0 15px 20px;
+  }
+
+  .hotel-all-card {
+    flex-flow: column;
+  }
+
+  /* popular hotel */
+
+  .hotel-pop {
+    border-radius: 0px;
+    overflow: scroll;
+    min-width: 100px;
+  }
+
+  .hotel-pop h2 {
+    margin-right: 0;
+  }
+
+  .hotel-all-pop-card {
+    flex-flow: column;
+  }
+
+  .hotel-pop-card {
+    width: 90%;
+    max-width: 400px;
+    height: 145px;
+  }
+
+  .hotel-pop-card-img img {
+    width: 100%;
+    min-width: 10px;
+  }
+
+  .hotel-pop-card-text {
+    overflow: auto;
+  }
+
+  /* hotel marseille */
+
+  .hotel-marseille {
+    background: white;
+    margin-right: 0px;
+  }
+
+  .hotel-card {
+    align-self: center;
+    width: 90%;
+    height: 210px;
+    max-width: 400px;
+  }
+
+  .hotel-card-img {
+    height: 130px;
+  }
+
+  .hotel-card-text {
+    line-height: 15px;
+    overflow: auto;
+    height: 35%;
+  }
+
+  .hotel-card-text h3,
+  .hotel-card-text p {
+    margin: 5px 0;
+  }
+
+  /* ACTIVITIES */
+
+  .activities {
+    margin: 20px;
+  }
+
+  .activities h2 {
+    margin: 25px 20px 15px 15px;
+  }
+
+  .activities-all-card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .activities-xs-s-group-card {
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  .activities article {
+    height: 210px;
+    width: 90%;
+    max-width: 400px;
+    overflow: auto;
+  }
+
+  /* FOOTER */
+
+  footer {
+    flex-flow: column;
+    justify-content: flex-start;
+    padding: 25px 0;
+  }
+
+  .footer-elem {
+    margin: 10px 0;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .search-bar input {
+    width: 60%;
+  }
+
+  .btn-search-icon i {
+    left: 85%;
+  }
+}
